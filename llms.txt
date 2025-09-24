@@ -1,0 +1,2664 @@
+Project Structure:
+📁 font-playground
+├── 📁 css
+│   ├── 📄 reset.css
+│   ├── 📄 style.css
+│   └── 📄 style.css.map
+├── 📁 images
+├── 📁 js
+│   ├── 📄 app.js
+│   ├── 📄 clipboard.min.js
+│   └── 📄 data.json
+├── 📁 scss
+│   ├── 📄 fonts.scss
+│   └── 📄 style.scss
+├── 📄 .gitignore
+├── 📄 CNAME
+├── 📄 Gruntfile.js
+├── 📄 index.html
+├── 📄 license.txt
+├── 📄 package-lock.json
+├── 📄 package.json
+└── 📄 README.md
+
+
+<documents>
+<document index="1">
+<source>.gitignore</source>
+<document_content>
+.DS_Store
+**/.sass-cache
+**/.sass-cache/*
+node_modules/
+fonts/
+js_backup/
+
+</document_content>
+</document>
+
+<document index="2">
+<source>CNAME</source>
+<document_content>
+play.typedetail.com
+
+</document_content>
+</document>
+
+# File: /Users/adam/Developer/vcs/github.twardoch/pub/font-playground/Gruntfile.js
+# Language: javascript
+
+
+
+<document index="3">
+<source>README.md</source>
+<document_content>
+# font-playground
+A fun place to play with variable fonts.
+
+Play with it here: [https://play.typedetail.com/](https://play.typedetail.com/)
+
+</document_content>
+</document>
+
+<document index="4">
+<source>css/reset.css</source>
+<document_content>
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+</document_content>
+</document>
+
+<document index="5">
+<source>css/style.css</source>
+<document_content>
+@font-face{src:url("https://fonts.typedetail.com/AdobeVFPrototype.woff2");font-family:'Adobe Prototype';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/AmstelvarAlpha-VF.woff2");font-family:'Amstelvar';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/AngusVariableItalic.woff2");font-family:'Angus Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/AngusVariable.woff2");font-family:'Angus';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/AvenirNext_Variable.woff2");font-family:'Avenir Next';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Bahnschrift.woff2");font-family:'Bahnschrift';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/BarlowGX.woff2");font-family:'Barlow';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/BluuSuuperstarVariableItalic.woff2");font-family:'Bluu Suuperstar Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/BluuSuuperstarVariable.woff2");font-family:'Bluu Suuperstar';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/BuffaloGals_Var.woff2");font-family:'Buffalo Gals';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Cheee_Variable.woff2");font-family:'Cheee';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/CompressaPRO-GX.woff2");font-family:'Compressa';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/DecovarAlpha-VF.woff2");font-family:'Decovar';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/DriveItalicVariable.woff2");font-family:'Drive Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/DriveMonoVariableItalic.woff2");font-family:'Drive Mono Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/DriveMonoVariable.woff2");font-family:'Drive Mono';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/DrivePropItalicVariable.woff2");font-family:'Drive Prop Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/DrivePropVariable.woff2");font-family:'Drive Prop';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/DriveVariable.woff2");font-family:'Drive';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Dunbar_Series-VF.woff2");font-family:'Dunbar';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/ExtraordinaireVariable-VF.woff2");font-family:'Extraordinaire';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/ExtraordinaireVariableShade-VF.woff2");font-family:'Extraordinaire Shade';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Fit-Variable.woff2");font-family:'Fit';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Gimlet_Romans-VF.woff2");font-family:'Gimlet Beta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Gimlet_Italics-VF.woff2");font-family:'Gimlet Italic Beta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Gingham.woff2");font-family:'Gingham';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Gnomon-Web.woff2");font-family:'Gnomon';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Input_Mono-VF.woff2");font-family:'Input Mono Beta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Jabin-VF.woff2");font-family:'Jabin';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/KairosSans_Variable.woff2");font-family:'Kairos Sans';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/LabDJR-VF.woff2");font-family:'Lab';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/LeagueMonoVariable.woff2");font-family:'League Mono';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/LibreFranklinGX-Romans.woff2");font-family:'Libre Franklin';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/LibreFranklinGX-Italics.woff2");font-family:'Libre Franklin Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/LouvetteBETA-VF.woff2");font-family:'Louvette Beta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/LouvetteBETA_Italic-VF.woff2");font-family:'Louvette Italic Beta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/MarkaziText-VF.woff2");font-family:'Markazi Text';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/MeritBadge-VF.woff2");font-family:'Merit Badge';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/MetaVariableDemo-Set.woff2");font-family:'Meta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/NunitoVFBeta.woff2");font-family:'Nunito Beta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Output_Sans-VF.woff2");font-family:'Output Sans Beta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Output_Sans_Hairlines-VF.woff2");font-family:'Output Sans Hairlines';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Pappardelle-VF.woff2");font-family:'Pappardelle';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/renner-VF.woff2");font-family:'Renner';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/RhodyVariable-VF.woff2");font-family:'Rhody';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/RoslindaleVariableBeta-VF.woff2");font-family:'Roslindale Beta';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SFNSDisplay.woff2");font-family:'San Francisco Display';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SFNSText.woff2");font-family:'San Francisco Text';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SFNSTextItalic.woff2");font-family:'San Francisco Text Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Selawik-variable.woff2");font-family:'Selawik';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/Slovic_Demo_VarGX.woff2");font-family:'Slovic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SourceCodeVariable-Italic.woff2");font-family:'Source Code Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SourceCodeVariable-Roman.woff2");font-family:'Source Code';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SourceSansVariable-Italic.woff2");font-family:'Source Sans Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SourceSansVariable-Roman.woff2");font-family:'Source Sans';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SourceSerifVariable-Roman.woff2");font-family:'Source Serif';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/SpookyVariable.woff2");font-family:'Spooky';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/VennVF.woff2");font-family:'Venn';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/VesterbroVariable.woff2");font-family:'Vesterbro';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/VesterbroItalicVariable.woff2");font-family:'Vesterbro Italic';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/VotoSerifGX.woff2");font-family:'Voto Serif';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/ZinzinVF.woff2");font-family:'Zinzin';font-style:normal}@font-face{src:url("https://fonts.typedetail.com/dTJakobVariableConceptGX.woff2");font-family:'dT Jakob';font-style:normal}input[type="range"]{-webkit-appearance:none;background-color:transparent;height:16px;margin:0;padding:0;position:relative;width:100%;z-index:1}input[type="range"]:focus{outline:none}input[type="range"]:active::-webkit-slider-thumb{border-width:8px}input[type="range"]:active::-moz-range-thumb{border-width:8px}input[type="range"]:active::-ms-thumb{border-width:8px}input[type="range"]::-webkit-slider-runnable-track{background-color:#E1E1E1;border-radius:1px;border:none;outline:none;height:2px;padding:0}input[type="range"]::-moz-range-track{background-color:#E1E1E1;border-radius:1px;border:none;outline:none;height:2px;padding:0}input[type="range"]::-ms-track{background-color:#E1E1E1;border-radius:1px;border:none;outline:none;height:2px;padding:0;border-color:transparent;color:transparent}input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;outline:none;background:#fff;height:16px;width:16px;border-radius:50%;border:2px solid #666;box-shadow:3px 0 0 1px #F7F7F7,-3px 0 0 1px #F7F7F7;box-sizing:border-box;margin-top:-7px;transition:border 125ms ease-in-out;z-index:1}input[type="range"]::-moz-range-thumb{-webkit-appearance:none;outline:none;background:#fff;height:16px;width:16px;border-radius:50%;border:2px solid #666;box-shadow:3px 0 0 1px #F7F7F7,-3px 0 0 1px #F7F7F7;box-sizing:border-box;margin-top:-7px;transition:border 125ms ease-in-out;z-index:1}input[type="range"]::-ms-thumb{-webkit-appearance:none;outline:none;background:#fff;height:16px;width:16px;border-radius:50%;border:2px solid #666;box-shadow:3px 0 0 1px #F7F7F7,-3px 0 0 1px #F7F7F7;box-sizing:border-box;margin-top:-7px;transition:border 125ms ease-in-out;z-index:1;margin-top:0}input[type="range"]::-ms-tooltip,input[type="range"]::-ms-ticks-before,input[type="range"]::-ms-ticks-after{display:none}input[type="range"]::-ms-fill-lower{background:#666;border-radius:1px}input[type="range"]::-ms-fill-upper{background:#E1E1E1;border-radius:1px}input[type="range"]::-moz-focus-outer{border:0}input[type="text"]{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;outline:none;border-radius:0;border-bottom:solid 1px #E1E1E1;background-color:transparent}input[type="text"]::-webkit-input-placeholder{color:#999}input[type="text"]::-moz-placeholder{color:#999}input[type="text"]:-ms-input-placeholder{color:#999}input[type="text"]::placeholder{color:#999}.text-frame{display:inline-block;position:absolute;top:100px;left:50px;border:solid 1px transparent}.text-frame.point-type:hover,.text-frame.point-type.selected,.text-frame.fit-type:hover,.text-frame.fit-type.selected{border:solid 1px #2680EB}.text-frame.area-type:hover,.text-frame.area-type.selected{border:solid 1px #2680EB}.text-frame.highlight .text{color:#2680EB}.text-frame.point-type .text{white-space:nowrap}.text-frame.area-type .text{height:100%;white-space:normal;overflow:hidden}.text-frame .text{font-size:100px;font-family:'Dunbar';font-variation-settings:"wght" 400, "opsz" 72}.text-frame .text .controls--vf-xheight .vf-xheight-line{position:absolute;left:0;right:0;height:1px;cursor:ns-resize;background-color:#2680EB;visibility:hidden}.text-frame .text .controls--vf-xheight .vf-xheight-line:before{content:'';position:absolute;left:0;right:0;top:-5px;margin:auto;height:11px;background-color:rgba(38,128,235,0.15)}.text-frame .text .controls--vf-xheight .vf-base-line{position:absolute;left:0;right:0;border-bottom:1px dashed #2680EB;visibility:hidden}.text-frame .round-handle{width:7px;height:7px;position:absolute;border:solid 1px #2680EB;background-color:#fff;border-radius:50%}.text-frame .square-handle{width:7px;height:7px;position:absolute;border:solid 1px #2680EB;background-color:#fff}.text-frame .controls--vf-opsz{position:absolute;left:0;right:0;margin:auto;bottom:-60px;width:9px}.text-frame .controls--vf-opsz .vf-opsz-handle{position:relative;width:7px;height:7px;border:solid 1px #2680EB;border-radius:50%;cursor:ns-resize}.text-frame .controls--vf-opsz .vf-opsz-handle:before{content:"";position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;width:1px;height:7px;background-color:#2680EB;box-shadow:-2px 0 0 0 #2680EB,2px 0 0 0 #2680EB}.text-frame .controls--vf-opsz .vf-opsz-line{position:absolute;width:0;left:4px;height:50px;top:-50px;transform-origin:left bottom;border-left:solid 1px #2680EB}.text-frame .controls--vf-slantness{position:absolute;left:0;right:0;margin:auto;top:-60px;width:9px}.text-frame .controls--vf-slantness .vf-slantness-handle{position:relative;width:7px;height:7px;border:solid 1px #2680EB;border-radius:4.5px;cursor:ew-resize}.text-frame .controls--vf-slantness .vf-slantness-handle:before{content:"";position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;width:1px;height:7px;background-color:#2680EB;box-shadow:-2px 0 0 0 #2680EB,2px 0 0 0 #2680EB}.text-frame .controls--vf-slantness .vf-slantness-line{position:absolute;width:0;left:4px;height:50px;transform-origin:left bottom;border-left:solid 1px #2680EB}.text-frame .controls--vf-width-x{position:absolute;right:-60px;bottom:-5px;margin:auto;width:9px;height:9px}.text-frame .controls--vf-width-x .vf-width-x-handle{position:relative;width:7px;height:7px;border:solid 1px #2680EB;border-radius:50%;cursor:ew-resize;background-color:#fff}.text-frame .controls--vf-width-x .vf-width-x-handle:before{content:"";position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;width:1px;height:7px;background-color:#2680EB;box-shadow:-2px 0 0 0 #2680EB,2px 0 0 0 #2680EB}.text-frame .controls--vf-width-x .vf-width-x-line{position:absolute;width:0;left:-50px;top:4px;width:50px;border-top:solid 1px #2680EB}.text-frame .controls--vf-width-y{position:absolute;right:-5px;margin:auto;bottom:-60px;width:9px}.text-frame .controls--vf-width-y .vf-width-y-handle{position:relative;width:7px;height:7px;border:solid 1px #2680EB;border-radius:50%;cursor:ns-resize}.text-frame .controls--vf-width-y .vf-width-y-handle:before{content:"";position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;width:1px;height:7px;background-color:#2680EB;box-shadow:-2px 0 0 0 #2680EB,2px 0 0 0 #2680EB}.text-frame .controls--vf-width-y .vf-width-y-line{position:absolute;width:0;left:4px;height:50px;top:-50px;transform-origin:left bottom;border-left:solid 1px #2680EB}.text-frame .controls--vf-width{position:absolute;right:-60px;bottom:-60px;width:9px}.text-frame .controls--vf-width .vf-width-handle{position:relative;width:7px;height:7px;border:solid 1px #2680EB;border-radius:50%;cursor:nwse-resize;background-color:#fff}.text-frame .controls--vf-width .vf-width-handle:before{content:"";position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;width:1px;height:7px;background-color:#2680EB;box-shadow:-2px 0 0 0 #2680EB,2px 0 0 0 #2680EB}.text-frame .controls--vf-width .vf-width-line{position:absolute;width:0;left:3px;top:3px;height:76px;transform-origin:top center;transform:rotate(135deg);border-left:solid 1px #2680EB}.text-frame .controls--size .handle{width:7px;height:7px;position:absolute;border:solid 1px #2680EB;background-color:#fff;border-radius:50%}.text-frame .controls--size .handle.top.left{cursor:nw-resize}.text-frame .controls--size .handle.top.center{cursor:n-resize}.text-frame .controls--size .handle.top.right{cursor:ne-resize}.text-frame .controls--size .handle.middle.left{cursor:w-resize}.text-frame .controls--size .handle.middle.right{cursor:e-resize}.text-frame .controls--size .handle.bottom.left{cursor:sw-resize}.text-frame .controls--size .handle.bottom.center{cursor:ns-resize}.text-frame .controls--size .handle.bottom.right{cursor:se-resize}.text-frame .controls--size .handle.top{top:-5px}.text-frame .controls--size .handle.bottom{bottom:-5px}.text-frame .controls--size .handle.left{left:-5px}.text-frame .controls--size .handle.right{right:-5px}.text-frame .controls--size .handle.center{left:0;right:0;margin:auto}.text-frame .controls--size .handle.middle{top:0;bottom:0;margin:auto}.text-frame .controls--area-size .square-handle.top.left,.text-frame .controls--area-size .square-handle.bottom.right{cursor:nwse-resize}.text-frame .controls--area-size .square-handle.top.right,.text-frame .controls--area-size .square-handle.bottom.left{cursor:nesw-resize}.text-frame .controls--area-size .square-handle.top{top:-5px}.text-frame .controls--area-size .square-handle.bottom{bottom:-5px}.text-frame .controls--area-size .square-handle.left{left:-5px}.text-frame .controls--area-size .square-handle.right{right:-5px}.text-frame .controls--font-size .round-handle.font-size-handle{cursor:ns-resize;bottom:-5px;left:0;right:0;margin:auto}.text-frame .controls--contrast{position:absolute;top:0;bottom:0;left:-62px;width:52px;display:none}.text-frame .controls--contrast .contrast-value{display:inline-block;font-size:20px;height:20px;color:#2680EB;width:40px;text-align:right;margin:auto;top:0;bottom:0;right:12px;position:absolute}.text-frame .controls--contrast .contrast-bracket{position:absolute;top:0;bottom:0;right:0;width:8px;border-top:solid 1px #2680EB;border-left:solid 1px #2680EB;border-bottom:solid 1px #2680EB}.text-frame:hover .controls--vf-xheight .vf-xheight-line,.text-frame:hover .controls--vf-xheight .vf-base-line{visibility:visible}.text-frame [class^="controls-"]{display:none}.text-frame.selected.area-type .controls--area-size,.text-frame.selected.area-type .controls--font-size,.text-frame.selected.point-type .controls--font-size,.text-frame.selected.vf-optical-size-on .controls--vf-opsz,.text-frame.selected.point-type.vf-width-on .controls--vf-width,.text-frame.selected.point-type.vf-width-on .controls--vf-width-x,.text-frame.selected.point-type.vf-width-on .controls--vf-width-y,.text-frame.selected.vf-slant-on .controls--vf-slantness,.text-frame.selected.vf-xheight-on .controls--vf-xheight{display:block}body{background-color:#fff;-moz-osx-font-smoothing:grayscale;font-smoothing:antialiased;-webkit-font-smoothing:antialiased;position:relative;font-family:"Nunito Beta",sans-serif;display:-ms-flexbox;display:flex}#font-playground-app{width:100%}#font-playground-app.design-view .panel .section.section-font-size,#font-playground-app.design-view .panel .section.section-preset-variations{display:block}#font-playground-app.design-view .panel .section.section-variable-options{display:-ms-flexbox;display:flex}#font-playground-app.design-view .panel .section.section-code,#font-playground-app.design-view .panel .section.section-export{display:none}#font-playground-app.design-view .about{display:none}#font-playground-app.code-view .panel .section.section-font-size,#font-playground-app.code-view .panel .section.section-preset-variations,#font-playground-app.code-view .panel .section.section-variable-options{display:none}#font-playground-app.code-view .panel .section.section-code,#font-playground-app.code-view .panel .section.section-export{display:-ms-flexbox;display:flex}#font-playground-app.code-view .about{display:none}#font-playground-app .drawer{display:none}#font-playground-app .canvas{width:calc(100vw - 284px);left:42px}#font-playground-app.font-menu-opened .drawer{display:block}#font-playground-app.font-menu-opened .canvas{width:calc(100vw - 526px);left:284px}#font-playground-app.about-view .tools,#font-playground-app.about-view .drawer,#font-playground-app.about-view .panel,#font-playground-app.about-view .canvas{display:none}#font-playground-app.about-view .about{display:block}.subtitle-text{font-family:"Nunito Beta",sans-serif;font-variation-settings:'wght' 140;color:#999;text-transform:uppercase;letter-spacing:0.08em;font-size:10px}.logo-text{font-family:"Nunito Beta",sans-serif;font-variation-settings:'wght' 156;color:#666;font-size:14px;text-decoration:none}.logo-text .accent-text{color:#2680EB}.badge-text{font-family:"Nunito Beta",sans-serif;font-variation-settings:'wght' 99;color:#666;font-size:12px}.label-text{font-family:"Nunito Beta",sans-serif;font-variation-settings:'wght' 99;color:#333;font-size:12px}.value-text{font-family:"Nunito Beta",sans-serif;font-variation-settings:'wght' 99;color:#000;font-size:12px}.button{background-color:#fff;border:1px solid #E1E1E1;line-height:28px;height:28px;box-sizing:border-box;border-radius:3px;padding:0 5px;cursor:pointer;display:inline-block}.button:active{border-color:#2680EB}.tabs{width:100vw;height:37px;background-color:#F7F7F7;border-bottom:2px solid #E1E1E1;position:absolute;top:0;left:0;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center}.tabs .logo-text{margin-left:12px;line-height:37px;position:absolute;left:0}.tabs .menu{position:absolute;left:140px;display:-ms-flexbox;display:flex}.tabs .menu>li{position:relative}.tabs .menu>li:hover>ul{display:block}.tabs .menu>li:hover>span{cursor:pointer;background-color:#666;color:#fff}.tabs .menu>li>span{display:block;padding:0 15px;line-height:38px;height:37px}.tabs .menu>li>ul{display:none;border-radius:0 0 3px 3px;width:-webkit-max-content;width:-moz-max-content;width:max-content;position:absolute;padding-top:2px;left:0;box-shadow:0 3px 10px rgba(102,102,102,0.5);z-index:9}.tabs .menu>li>ul li,.tabs .menu>li>ul a{display:block;position:relative;line-height:30px;padding:0 30px 0 15px;background-color:#F7F7F7}.tabs .menu>li>ul li:hover,.tabs .menu>li>ul a:hover{cursor:pointer;background-color:#2680EB;color:#fff}.tabs .menu>li>ul li:last-child,.tabs .menu>li>ul a:last-child{border-radius:0 0 3px 3px}.tabs .menu>li>ul li.contains-sub-menu:after{content:"▶";position:absolute;top:0;bottom:0;right:8px}.tabs .menu>li>ul li.contains-sub-menu ul{display:none;position:absolute;z-index:2;left:100%;top:0;box-shadow:0 3px 10px rgba(102,102,102,0.5)}.tabs .menu>li>ul li.contains-sub-menu ul li{color:#000;padding:0 15px}.tabs .menu>li>ul li.contains-sub-menu ul li:hover{color:#fff}.tabs .menu>li>ul li.contains-sub-menu ul li:last-child{border-radius:0 0 3px 3px}.tabs .menu>li>ul li.contains-sub-menu:hover ul{display:block}.tabs .menu>li>ul a.offsite-link:after{content:"⸣";position:absolute;top:0;bottom:0;right:8px}.tabs .menu>li>ul a{text-decoration:none;color:inherit}.tabs .tab{position:relative;color:#666;padding:0 10px;line-height:38px;height:39px;cursor:pointer;overflow:hidden;transition:color 0.2s ease}.tabs .tab:after{content:'';position:absolute;width:100%;bottom:0;left:0;height:2px;border-radius:1px;background-color:#000;opacity:0;transition:opacity 0.2s ease}.tabs .tab.active{cursor:default;color:#000}.tabs .tab.active:after{opacity:1}.tabs .social{margin-right:12px;margin-top:4px;position:absolute;right:0;display:-ms-flexbox;display:flex}.tabs .social .icon-button{width:30px;height:30px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;cursor:pointer}.tabs .social .icon-button path{fill:#666;transition:fill 0.2s ease}.tabs .social .icon-button.newsletter:hover path{fill:#2680EB}.tabs .social .icon-button.twitter:hover path{fill:#1DA1F2}.tabs .social .icon-button.facebook:hover path{fill:#3B5998}.tabs .social .icon-button.github:hover path{fill:#000000}.tools{width:42px;height:calc(100vh - 39px);background-color:#F7F7F7;border-right:2px solid #E1E1E1;position:absolute;top:39px;left:0;box-sizing:border-box;padding-top:4px;padding-left:2px;padding-right:2px}.tools .tool{padding:9px;cursor:pointer;position:relative}.tools .tool path{fill:#666;transition:fill 0.2s ease}.tools .tool:hover path,.tools .tool.active path{fill:#2680EB}.tools .tool.font-menu{position:absolute;bottom:4px}.drawer{width:242px;height:calc(100vh - 39px);background-color:#F7F7F7;border-right:2px solid #E1E1E1;position:absolute;top:39px;left:42px;box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.drawer .section.section-font-cards{height:calc(100% - 210px);display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.drawer .section.section-font-cards .search-box{position:relative;margin-top:15px}.drawer .section.section-font-cards .search-box input{width:100%;height:26px;line-height:26px}.drawer .section.section-font-cards .search-box input:invalid{box-shadow:none}.drawer .section.section-font-cards .search-box input:not(:valid) ~ .close-button{display:none}.drawer .section.section-font-cards .search-box input:not(:valid) ~ .search-icon{display:block}.drawer .section.section-font-cards .search-box .search-icon{display:none;width:18px;height:18px;position:absolute;top:5px;right:0}.drawer .section.section-font-cards .search-box .search-icon:before{content:'';position:absolute;width:9px;height:9px;box-sizing:border-box;border:solid 2px #999;border-radius:50%;top:3px;left:3px}.drawer .section.section-font-cards .search-box .search-icon:after{content:'';position:absolute;top:10px;left:9px;width:2px;height:5px;background-color:#999;border-radius:1px;transform:rotate(-45deg);transform-origin:1px top}.drawer .section.section-font-cards .search-box .close-button{cursor:pointer;width:18px;height:18px;position:absolute;top:5px;right:0}.drawer .section.section-font-cards .search-box .close-button:before,.drawer .section.section-font-cards .search-box .close-button:after{content:"";display:block;width:2px;height:14px;background-color:#999;border-radius:1px;position:absolute;top:2px;left:8px;transform:rotate(45deg)}.drawer .section.section-font-cards .search-box .close-button:before{transform:rotate(-45deg)}.drawer .section.section-font-cards .font-cards{margin-top:15px;overflow:auto;margin-right:-12px;padding-right:12px}.drawer .section.section-font-info{position:relative;height:210px;overflow:auto}.drawer .section.section-font-info .font-card{margin-top:15px}.drawer .section.section-font-info table.font-info__table{margin-top:15px;margin-bottom:10px;width:100%}.drawer .section.section-font-info table.font-info__table tr th,.drawer .section.section-font-info table.font-info__table tr td{text-align:left;padding-bottom:12px}.drawer .section.section-font-info table.font-info__table tr:last-child th,.drawer .section.section-font-info table.font-info__table tr:last-child td{padding-bottom:0}.drawer .section.section-font-info table.font-info__table tr th{padding-right:15px;box-sizing:border-box;width:32%}.drawer .section.section-font-info table.font-info__table tr td{width:68%}.drawer .section.section-font-info table.font-info__table a{text-decoration:none}.drawer .section.section-font-info table.font-info__table a:hover{text-decoration:underline}.canvas{background-color:#fff;color:#000;height:calc(100vh - 39px);position:absolute;top:39px;overflow:auto}.panel{width:242px;height:calc(100vh - 39px);background-color:#F7F7F7;border-left:2px solid #E1E1E1;position:absolute;top:39px;right:0;box-sizing:border-box;overflow-x:hidden;overflow-y:auto;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.panel .section.section-font-size{padding:20px 12px}.panel .section.section-preset-variations .variations{margin-top:15px;max-height:90px;overflow-y:auto;margin-right:-12px;padding-right:12px}.panel .section.section-variable-options{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-height:0}.panel .section.section-variable-options .slider-2d{-ms-flex-negative:0;flex-shrink:0;margin-top:15px;margin-bottom:5px}.panel .section.section-variable-options .sliders{margin-right:-12px;padding-right:12px;overflow:auto;margin-top:15px}.panel .section.section-variable-options .slider{margin-bottom:20px}.panel .section.section-code{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-height:0;-ms-flex-positive:1;flex-grow:1}.panel .section.section-code code{background-color:#fff;color:#000;border-radius:3px;border:solid 1px #E1E1E1;display:block;font-family:"Input Mono Beta",monospace;font-variation-settings:'wght' 450, 'wdth' 500, 'slnt' 0;font-size:11px;line-height:1.3;margin-top:15px;padding:10px 6px;white-space:pre;overflow:auto;word-wrap:break-word}.panel .section.section-code code span.css-for-canvas-object{display:block;cursor:pointer;width:-webkit-max-content;width:-moz-max-content;width:max-content;min-width:calc(100% + 6px)}.panel .section.section-code code span.css-for-canvas-object.highlight{background-color:#000;color:#fff}.panel .section.section-code code span.css-for-canvas-object:hover{color:#2680EB}.panel .section.section-export{display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;-ms-flex-negative:0;flex-shrink:0;width:100%;background-color:#F7F7F7}.panel .section.section-export .button{margin-left:12px}.panel .section.section-export .button.copied{position:relative;border-color:#2680EB}.panel .section.section-export .button.copied:after{content:"Copied";position:absolute;color:#fff;background-color:#2680EB;left:0;width:100%;height:26px;text-align:center;border-radius:2px}.panel .section.section-export .button.button-export{margin-left:0;-ms-flex-positive:1;flex-grow:1;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.panel .section.section-export .button.button-export path{fill:#666}.panel .section.section-export #form-export{display:-ms-flexbox;display:flex;-ms-flex-positive:1;flex-grow:1}.panel .section.section-export button:focus{outline:none}.about{background-color:#fff;width:600px;margin:80px auto;font-family:"Nunito Beta",sans-serif;font-variation-settings:'wght' 99;color:#000;font-size:16px;line-height:24px}.about h1{margin:22px 0 0 0;font-variation-settings:'wght' 156}.about p{font-variation-settings:'wght' 99;margin:11px 0}.about ul{margin:11px 0}.about ul li{font-variation-settings:'wght' 99}.about a{color:#000}.section{border-top:2px solid #E1E1E1;padding:10px 12px;box-sizing:border-box}.section:first-child,.section.section-code{border-top:none}.font-card{background-color:#fff;border:1px solid #E1E1E1;padding:5px 9px;cursor:pointer;transition:border-color 125ms ease-in-out;border-radius:3px;margin-bottom:6px;position:relative}.font-card.active{border-color:#2680EB}.font-card .font-preview{font-size:20px;line-height:26px;height:26px;overflow:hidden;white-space:nowrap;font-family:"Nunito Beta",sans-serif;font-variation-settings:'dfat' 0;color:#333;margin-right:-9px;position:relative}.font-card .font-preview:after{content:"";position:absolute;top:0;bottom:0;right:0;width:20px;background:linear-gradient(to right, rgba(255,255,255,0) 0%, #fff 90%)}.font-card .label-text{line-height:15px;height:15px;white-space:nowrap;overflow:hidden;margin-right:30px;margin-bottom:2px;color:#000}.font-card .badge-text{line-height:15px;height:15px;position:absolute;top:5px;right:8px}.font-card .badge-text:before{content:'';position:relative;display:inline-block;top:1px;width:11px;height:11px;margin-right:3px;background-image:url(../images/variable-font.svg)}.variation-card{background-color:#fff;color:#000;border:1px solid #E1E1E1;font-size:12px;line-height:28px;height:28px;box-sizing:border-box;border-radius:3px;margin-bottom:6px;padding-left:5px;cursor:pointer;transition:border-color 0.2s ease}.variation-card.active{border-color:#2680EB}.variation-card span.specimen{font-size:20px;float:right;margin-right:5px;line-height:26px;color:#333}.slider-2d{position:relative;width:216px;height:216px;overflow:hidden;cursor:crosshair}.slider-2d:before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;box-sizing:border-box;border:1px solid #E1E1E1;background-color:#fff;border-radius:3px}.slider-2d:active .handle:before{border-width:8px}.slider-2d .handle{position:absolute;left:20%;top:20%;width:16px;height:16px;cursor:move}.slider-2d .handle::before{content:'';position:absolute;width:100%;height:100%;box-sizing:border-box;border:2px solid #666;background-color:#fff;border-radius:50%;transition:border 125ms ease-in-out}.slider-2d .handle .axis-x-line{position:absolute}.slider-2d .handle .axis-x-line:before,.slider-2d .handle .axis-x-line:after{content:"";position:absolute;width:216px;height:2px;top:7px}.slider-2d .handle .axis-x-line:before{background-color:#E1E1E1;left:-220px}.slider-2d .handle .axis-x-line:after{background-color:#E1E1E1;right:-236px}.slider-2d .handle .axis-y-line{position:absolute}.slider-2d .handle .axis-y-line:before,.slider-2d .handle .axis-y-line:after{content:"";position:absolute;width:2px;height:216px;left:7px}.slider-2d .handle .axis-y-line:before{background-color:#E1E1E1;top:-220px}.slider-2d .handle .axis-y-line:after{background-color:#E1E1E1;bottom:-236px}.slider span.radio-button{float:left;margin-right:6px;position:relative;width:16px;height:16px;box-sizing:border-box;background-color:#fff;border:1px solid #999;border-radius:3px;cursor:pointer}.slider span.radio-button:before{content:'';position:absolute;top:6px;left:0;width:100%;border-top:solid 2px #E1E1E1}.slider span.radio-button:after{content:'';position:absolute;top:0;left:6px;width:2px;height:14px;background-color:#E1E1E1}.slider.selected span.radio-button{border:none;background-color:transparent;cursor:default}.slider.selected span.radio-button:before{content:'x';width:100%;top:2px;left:0;border-top:solid 2px #999;color:#999;font-variation-settings:'wght' 156;line-height:12px;text-align:center}.slider.selected span.radio-button:after{content:'';width:2px;height:6px;top:0;left:14px;background-color:#999}.slider.selected ~ .slider.selected span.radio-button{width:16px;height:16px;border:none;background-color:transparent;border-radius:0;position:relative;cursor:default}.slider.selected ~ .slider.selected span.radio-button:before{content:'y';top:0;left:2px;height:100%;border-top:none;border-left:solid 2px #999;width:11px;line-height:10px;text-align:right}.slider.selected ~ .slider.selected span.radio-button:after{content:'';width:6px;height:2px;top:14px;left:0;background-color:#999}.slider label{float:left;line-height:16px}.slider input[type=text]{line-height:16px;float:right;padding:0 6px 3px 0;width:50px;text-align:right}.slider input[type=range]{margin-top:10px;clear:both}.tip-text{font-family:"Nunito Beta",sans-serif;font-variation-settings:'wght' 99;font-size:10px;white-space:nowrap;position:absolute;pointer-events:none;display:none;z-index:9;color:#2680EB}[class$="-handle"] .tip-text{top:10px;left:10px}.tool .tip-text{top:13px;left:30px;color:#000;background-color:#fff}.vf-xheight-line .tip-text{left:calc(100% + 5px);top:-5px}.vf-xheight-line:hover .tip-text,.tool:hover .tip-text,[class$="-handle"]:hover .tip-text{display:block}.vf-xheight-line:active .tip-text,.tool:active .tip-text,[class$="-handle"]:active .tip-text{display:none}
+
+</document_content>
+</document>
+
+<document index="6">
+<source>css/style.css.map</source>
+<document_content>
+{"version":3,"sources":["../scss/style.scss"],"names":[],"mappings":"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","file":"style.css"}
+</document_content>
+</document>
+
+<document index="7">
+<source>index.html</source>
+<document_content>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Font Playground -- Play with variable fonts!</title>
+    <meta name="viewport" content="width=900, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="Description" content="fonts, typeface, typography, variable font, Adobe VF Prototype, Amstelvar, Avenir Next, Bahnschrift, Barlow, Buffalo Gals, Cheee, Compressa, dT Jakob, Decovar, Dunbar, Extraordinaire, Extraordinaire Shade, Fit, Gimlet Beta, Gimlet Italic Beta, Gingham, Gnomon*, Input Mono Beta, Jabin, Kairos Sans, Lab, League Mono, Libre Franklin, Libre Franklin Italic, Louvette Beta, Louvette Italic Beta, Markazi Text, Merit Badge, FF Meta, Nunito Beta, Output Sans Beta, Output Sans Hairlines, Pappardelle, Renner*, Rhody, Roslindale Beta, San Francisco Display, San Francisco Text, San Francisco Text Italic, Selawik, Slovic, Source Code, Source Code Italic, Source Sans, Source Sans Italic, Source Serif, Venn, Voto Serif, Zinzin, Adobe, Frank Grießhammer, Font Bureau, David Berlow, Monotype, Adrian Frutiger, Akira Kobayashi, Microsoft, Tribby Type Co., Jeremy Tribby, Rickner Type, Thomas Rickner, OH no Type Co., James T. Edmondson, Ingo Preuss, dooType, Eduilson Coan, Gustavo Soares, CJ Type, CJ Dunn, DJR, David Jonathan Ross, David Jonathan Ross, Oded Ezer, Christoph Koeberlin, indestructible type*, Owen Earl, DJR, Font Bureau, Frida Medrano, Terrance Weinzierl, The League of Moveable Type, Tyler Finck, Tyler Finck, Impallari Type, Pablo Impallari, Rodrigo Fuenzalida, Nhung Nguyen, Borna Izadpanah, Florian Runge, Google, Borna Izadpanah (Arabic designer), Fiona Ross (Arabic design director) and Florian Runge (Latin designer), Erik Spiekermann, Google, Vernon Adams, Apple, Aaron Bell, Fontfabric, Plamen Motev, Paul D. Hunt, Teo Tuominen, Paul D. Hunt, Dalton Maag, Monotype Design Team, Adam Twardoch, Adam Twardoch, Natanael Gama, Adam Twardoch"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="Font Playground">
+    <meta name="twitter:title" content="Font Playground -- Play with variable fonts!">
+    <meta name="twitter:description" content="The most fun place to experiment with layouts using variable fonts, and export front-end code right from this little web app. Designed and developed by Wenting Zhang.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dr6lvwubh/image/upload/v1532892532/social-assets/font-playground-twitter-1200-675.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Font Playground -- Play with variable fonts!">
+    <meta property="og:description" content="The most fun place to experiment with layouts using variable fonts, and export front-end code right from this little web app. Designed and developed by Wenting Zhang.">
+    <meta property="og:site_name" content="Font Playground">
+    <meta property="og:url" content="https://play.typedetail.com/">
+    <meta property="og:image" content="https://res.cloudinary.com/dr6lvwubh/image/upload/v1532892532/social-assets/font-playground-facebook-1200-630.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src='js/vue.min.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122306892-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-122306892-1');
+    </script>
+</head>
+
+<body class="select-disabled">
+<div id="font-playground-app" :class="{ 
+  'design-view': appStates.tabs.design.isActive,
+  'code-view': appStates.tabs.code.isActive,
+  'about-view': appStates.tabs.about.isActive,
+  'font-menu-opened': appStates.drawer.fontMenu.isActive }">
+  <div class="tabs select-disabled">
+    <a class="logo-text" href="/"><span class="accent-text">Font</span> Playground</a>
+    <ul class="menu label-text">
+      <li>
+        <span>File</span>
+        <ul>
+          <li @click="newFile">New</li>
+          <li @click="openFile('prompt')">Open…</li>
+          <li class="contains-sub-menu" v-if="appStates.recentFiles.length > 0">Open Recent
+            <ul>
+              <li v-for="file in appStates.recentFiles" @click="openFile(file)">{{file}}</li>
+            </ul>
+          </li>
+          <li @click="saveFileToCodepen">Save to CodePen</li>
+          <a class="offsite-link" href="https://codepen.io/tag/font_playground/" target="_blank">Online Gallery</a>
+        </ul>
+      </li>
+      <li>
+        <span>Help</span>
+        <ul>
+          <a class="offsite-link" href="https://www.youtube.com/playlist?list=PLjvaEvhJuIkyVP_jPw2HGN5jjjwKZrC13" target="_blank">Tutorial Videos</a>
+          <a class="offsite-link" href="https://github.com/wentin/font-playground/releases/" target="_blank">What’s New</a>
+          <a class="offsite-link" href="https://github.com/wentin/font-playground/issues/new" target="_blank">Report Issue</a>
+        </ul>
+      </li>
+    </ul>
+    <div class="tab label-text" :class="{ active: tab.isActive }" v-for="tab in appStates.tabs" @click="activateTab(tab)">{{ tab.name }}</div>
+    <div class="social">
+      <a href="http://eepurl.com/dCxipf" target="_blank" class="newsletter icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>newsletter</title><path d="M0,1,3.417,14.578l6.648-2.119L4.137,5.233l7.65,6.71L18,10ZM10.279,17.262V13.526l-2.187.65Z"/></svg>
+      </a>
+      <a href="https://twitter.com/home?status=Font%20Playground%20--%20Play%20with%20variable%20fonts,%20and%20export%20front-end%20code%20right%20from%20this%20little%20web%20app%3A%20https%3A//play.typedetail.com/%20%23variablefonts%20%23fontplayground%20via%20%40DesignJokes" target="_blank" class="twitter icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>twitter</title><path d="M16.969,4.549a6.624,6.624,0,0,1-1.883.516A3.307,3.307,0,0,0,16.528,3.25a6.777,6.777,0,0,1-2.084.789A3.279,3.279,0,0,0,8.769,6.278a3.373,3.373,0,0,0,.084.749,9.291,9.291,0,0,1-6.76-3.421,3.222,3.222,0,0,0-.444,1.65,3.28,3.28,0,0,0,1.458,2.73,3.274,3.274,0,0,1-1.485-.41v.04a3.281,3.281,0,0,0,2.63,3.218,3.317,3.317,0,0,1-.864.114,3.282,3.282,0,0,1-.61-.057,3.292,3.292,0,0,0,3.069,2.278A6.579,6.579,0,0,1,1.78,14.576,7,7,0,0,1,1,14.532a9.333,9.333,0,0,0,5.038,1.474,9.265,9.265,0,0,0,9.332-9.2V6.68c0-.139,0-.28-.01-.42A6.62,6.62,0,0,0,17,4.562Z"></svg>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//play.typedetail.com/%20" target="_blank" class="facebook icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>facebook</title><path d="M15.227,2H2.773A.773.773,0,0,0,2,2.773H2V15.228A.771.771,0,0,0,2.77,16H9.477V10.575H7.652V8.466H9.477V6.905A2.544,2.544,0,0,1,11.756,4.12h0a2.465,2.465,0,0,1,.438-.006,15.331,15.331,0,0,1,1.631.082v1.89h-1.12c-.875,0-1.045.421-1.045,1.034V8.468h2.09l-.271,2.118H11.66V16h3.567A.772.772,0,0,0,16,15.229h0V2.772A.772.772,0,0,0,15.228,2Z"/></svg>
+      </a>
+      <a href="https://github.com/wentin/font-playground" target="_blank" class="github icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>github</title><path d="M9.006,1a8.006,8.006,0,0,0-2.532,15.6c.4.075.547-.172.547-.384,0-.19-.006-.693-.01-1.361-2.227.483-2.7-1.074-2.7-1.074a2.123,2.123,0,0,0-.891-1.174c-.725-.5.056-.486.056-.486a1.679,1.679,0,0,1,1.226.825,1.7,1.7,0,0,0,2.309.675l.022-.013a1.707,1.707,0,0,1,.508-1.071c-1.778-.2-3.647-.888-3.647-3.955a3.091,3.091,0,0,1,.824-2.149,2.843,2.843,0,0,1,.07-2.12s.67-.214,2.2.821a7.554,7.554,0,0,1,4,0c1.521-1.036,2.192-.821,2.192-.821a2.928,2.928,0,0,1,.08,2.12,3.107,3.107,0,0,1,.821,2.149c0,3.075-1.872,3.752-3.653,3.948a1.917,1.917,0,0,1,.54,1.481c0,1.072-.01,1.933-.01,2.193,0,.21.14.46.551.38A8,8,0,0,0,9.006,1Z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="tools">
+    <div class="tool selector active">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>select</title><path d="M4,1,14.7,12.7a.192.192,0,0,1-.038.269A.181.181,0,0,1,14.6,13H8.7a.762.762,0,0,0-.4.2l-4,3.6a.192.192,0,0,1-.269-.038A.181.181,0,0,1,4,16.7Z"/></svg>
+    </div>
+    <div class="tool point-type" @click="addCanvasObject('point type')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>point-type</title><path d="M6.5,16a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5H8V4H4V5.5a.5.5,0,0,1-.5.5h-1A.5.5,0,0,1,2,5.5v-3A.5.5,0,0,1,2.5,2h13a.5.5,0,0,1,.5.5v3a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4H10V14h1.5a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5Z"/></svg>
+    </div>
+    <div class="tool area-type" @click="addCanvasObject('area type')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>area-type</title><path d="M12.5,16a.5.5,0,0,1-.5-.5V4H10V15.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V11H6.5a4.5,4.5,0,0,1,0-9h7a.5.5,0,0,1,.5.5v13a.5.5,0,0,1-.5.5Z"/></svg>
+    </div>
+    <div class="tool fit-type">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>fit-type</title><path d="M4,9.051v-3.1A2.5,2.5,0,0,0,5.949,4h6.1a2.5,2.5,0,1,0,0-1h-6.1A2.5,2.5,0,1,0,3,5.949v3.1A2.5,2.5,0,1,0,5.949,12H7V11H5.949A2.505,2.505,0,0,0,4,9.051ZM14.5,2A1.5,1.5,0,1,1,13,3.5,1.5,1.5,0,0,1,14.5,2ZM2,3.5A1.5,1.5,0,1,1,3.5,5,1.5,1.5,0,0,1,2,3.5ZM3.5,13A1.5,1.5,0,1,1,5,11.5,1.5,1.5,0,0,1,3.5,13Z"/><path d="M16.5,7h-9a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V9h2v5h-.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5H13V9h2v1.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,16.5,7Z"/></svg>
+      <div class="tip-text">Feature coming soon</div>
+    </div>
+    <div class="tool font-menu" :class="{ active: appStates.drawer.fontMenu.isActive }" @click="toggleDrawer(appStates.drawer.fontMenu)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>font-menu</title><path d="M13.93,1.253C12.515,1.253,11.608,1,10.151,1c-4.708,0-6.9,2.681-6.9,5.4,0,1.6.76,2.132,2.259,2.132a2.949,2.949,0,0,1-.3-1.626c0-3.188,1.2-4.116,2.745-4.18,0,0-1.265,12.4-4.934,13.884V17H7.969L9.657,9h3.094l.689-2H10.079l.811-3.846a14.012,14.012,0,0,0,2.617.38c.971,0,1.858-.3,2.343-2.533a6.239,6.239,0,0,1-1.921.253Z" fill="#666"/></svg>
+    </div>
+  </div>
+  <div class="drawer">
+    <div class="section section-font-cards">
+      <h4 class="subtitle-text">FONT FAMILY</h4>
+      <div class="search-box">
+        <input required class="value-text" type="text" v-model="search" placeholder="Search by name, axis, designer…" @keydown="captureKeydown"/>
+        <div class="search-icon"></div>
+        <div class="close-button" @click="search = ''"></div>
+      </div>
+      <div class="font-cards">
+        <div class="font-card" :id="fontFamily.cssCodeName.replace(/ /g,'-')"  :class="{ active: fontFamily.isActive }" v-for="fontFamily in filteredFontFamilies" @click="activateFamily(fontFamily)">
+          <h4 class="label-text">{{ fontFamily.fontFamilyName }}</h4>
+          <h4 class="badge-text">{{ fontFamily.variableOptions.axes.length }}</h4>
+          <h1 class="font-preview" 
+            v-if="!fontFamily.previewText.isCustom"
+            :style="{fontFamily: fontFamily.cssCodeName}">
+            {{ fontFamily.fontFamilyName }}
+          </h1>
+          <h1 class="font-preview" 
+            v-if="fontFamily.previewText.isCustom"
+            :style="{fontFamily: fontFamily.cssCodeName}">
+            {{ fontFamily.previewText.customText }}
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="section section-font-info">
+      <h4 class="subtitle-text">FONT INFO</h4>
+      <div class="font-info label-text">
+        <div class="font-card active" @click="scrollIntoView(activeFont)">
+          <h4 class="label-text">{{ activeFont.fontFamilyName }}</h4>
+          <h4 class="badge-text">{{ activeFont.variableOptions.axes.length }}</h4>
+          <h1 class="font-preview" 
+            v-if="!activeFont.previewText.isCustom"
+            :style="{fontFamily: activeFont.cssCodeName}">
+            {{ activeFont.fontFamilyName }}
+          </h1>
+          <h1 class="font-preview" v-if="activeFont.previewText.isCustom">
+            {{ activeFont.previewText.customText }}
+          </h1>
+        </div>
+        <table class="font-info__table">
+          <tr>
+            <th class="label-text">Designer</th>
+            <td class="value-text">{{ activeFont.fontInfo.designer }}</td>
+          </tr>
+          <tr>
+            <th class="label-text">Publisher</th>
+            <td class="value-text">{{ activeFont.fontInfo.publisher }}</td>
+          </tr>
+          <tr>
+            <th class="label-text">License</th>
+            <td class="value-text">{{ activeFont.fontInfo.license }}</td>
+          </tr>
+          <tr>
+            <th class="label-text">Link</th>
+            <td><a :href="activeFont.fontInfo.url" class="value-text" target="_blank">{{ activeFont.fontInfo.urlText }}</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="canvas" @click="deselectAllCanvasObject">
+    <script type="text/x-template" id="point-type-frame-template">
+      <div class="text-frame" 
+           :class="{ 
+            'area-type': cobject.type == 'area type',
+            'point-type': cobject.type == 'point type',
+            'selected': cobject.isSelected, 
+            'vf-optical-size-on': isVFOpticalSizeSupported, 
+            'vf-width-on': isVFWidthSupported, 
+            'vf-slant-on': isVFSlantSupported, 
+            'vf-xheight-on': isVFXHeightSupported }"
+           :style="textFrameStyles"
+           @dblclick="editTextFrame"
+           @mousedown="moveTextFrameInitDrag"
+           @touchstart="moveTextFrameInitDrag"
+            >
+        <div class="controls--vf-opsz" @mousedown="controlVFOpticalSizeInitDrag"
+        @touchstart="controlVFOpticalSizeInitDrag">
+          <div class="vf-opsz-handle">
+            <div class="tip-text">optical size</div>
+          </div>
+          <div class="vf-opsz-line"></div>
+        </div>
+        <div class="controls--vf-slantness" @mousedown="controlVFSlantInitDrag"
+        @touchstart="controlVFSlantInitDrag">
+          <div class="vf-slantness-handle" :style="{left: slantnessControlStyles.left}">
+            <div class="tip-text">font slant</div>
+          </div>
+          <div class="vf-slantness-line" :style="{transform: slantnessControlStyles.skew}"></div>
+        </div>
+        <div class="controls--vf-width-x" @mousedown="controlVFWidthXInitDrag"
+        @touchstart="controlVFWidthXInitDrag">
+          <div class="vf-width-x-line"></div>
+          <div class="vf-width-x-handle">
+            <div class="tip-text">font width</div>
+          </div>
+        </div>
+        <div class="controls--vf-width-y" @mousedown="controlVFWidthYInitDrag"
+        @touchstart="controlVFWidthYInitDrag">
+          <div class="vf-width-y-line"></div>
+          <div class="vf-width-y-handle">
+            <div class="tip-text">font width</div>
+          </div>
+        </div>
+        <div class="controls--vf-width" 
+        @mousedown="controlVFWidthInitDrag"
+        @touchstart="controlVFWidthInitDrag">
+          <div class="vf-width-line"></div>
+          <div class="vf-width-handle">
+            <div class="tip-text">font width</div>
+          </div>
+        </div>
+        <div class="controls--size">
+          <div class="handle top left"></div>
+          <div class="handle top center"></div>
+          <div class="handle top right"></div>
+          <div class="handle middle left"></div>
+          <div class="handle middle right"></div>
+          <div class="handle bottom left"></div>
+          <div class="handle bottom center"></div>
+          <div class="handle bottom right"></div>
+        </div>
+        <div class="controls--area-size">
+          <div class="square-handle area-size-top-left-handle top left"
+          @mousedown="controlAreaSizeInitDrag($event,[-1,-1])"
+          @touchstart="controlAreaSizeInitDrag($event,[-1,-1])"></div>
+
+          <div class="square-handle area-size-top-right-handle top right"
+          @mousedown="controlAreaSizeInitDrag($event,[1,-1])"
+          @touchstart="controlAreaSizeInitDrag($event,[1,-1])"></div>
+
+          <div class="square-handle area-size-bottom-left-handle bottom left"
+          @mousedown="controlAreaSizeInitDrag($event,[-1,1])"
+          @touchstart="controlAreaSizeInitDrag($event,[-1,1])"></div>
+          
+          <div class="square-handle area-size-bottom-right-handle bottom right"
+          @mousedown="controlAreaSizeInitDrag($event,[1,1])"
+          @touchstart="controlAreaSizeInitDrag($event,[1,1])"></div>
+        </div>
+        <div class="controls--font-size" @mousedown="controlFontSizeInitDrag" @touchstart="controlFontSizeInitDrag">
+          <div class="round-handle font-size-handle">
+            <div class="tip-text">font size</div>
+          </div>
+        </div>
+        <div class="controls--contrast"> 
+          <div class="contrast-value">2.0</div>
+          <div class="contrast-bracket"></div>
+        </div>
+        <div class="text":class="{ 'select-disabled': !states.isEditable, 'select-enabled': states.isEditable }" :contenteditable="states.isEditable" :style="textStyles"
+           @blur="deactivateStates"
+           @input="updateContent"
+           @keydown="captureKeydown">
+          <div class="controls--vf-xheight" contenteditable=false>
+            <div class="vf-xheight-line" :style="{top: xHeightControlStyles.xHeightTop}" @mousedown="controlVFxHeightInitDrag"
+            @touchstart="controlVFxHeightInitDrag">
+              <div class="tip-text">x height</div>
+            </div>
+            <div class="vf-base-line" :style="{top: xHeightControlStyles.baselineTop}"></div>
+          </div>
+          <div class="text-span":contenteditable="states.isEditable"></div>
+        </div>
+      </div>
+    </script>
+    <point-type-frame 
+      :id="canvasObject.id" 
+      :cobject="canvasObject" 
+      v-for="canvasObject in canvasObjects" 
+      @change="handleCanvasObjectChange" 
+      @click.native.stop="selectCanvasObject(canvasObject)" 
+      @touchstart.native.stop="selectCanvasObject(canvasObject)"
+      @update="canvasObject.properties.text = $event"></point-type-frame>
+      <!-- <pre>{{canvasObjects}}</pre> -->
+      <!-- <pre>{{allFontFacesDebugOnly}}</pre> -->
+  </div>
+  <div class="panel">
+    <div class="section section-font-size">
+      <div class="slider slider-font-size">
+        <label for="range-input" class="label-text">Font Size</label>
+        <input type="text" class="value-text" v-model="fontSize" @input="handleFontSizeChange" @keydown="captureKeydown">
+        <input type="range" min="1"  max="400" step="1" v-model="fontSize" @input="handleFontSizeChange">
+      </div>
+    </div>
+    <div class="section section-preset-variations" v-if="activeFont.variableOptions.instances.length > 0">
+      <h4 class="subtitle-text">PRESET VARIATIONS</h4>
+      <div class="variations">
+        <div class="variation-card value-text" :class="{ active: instance.isActive }" v-for="instance in activeFont.variableOptions.instances" @click="activateInstance(instance)">
+          {{instance.name}}
+          <span class="specimen" v-bind:style="instanceStyles(instance)">Ag</span>
+        </div>
+      </div>
+    </div>
+    <div class="section section-variable-options">
+      <h4 class="subtitle-text">VARIABLE OPTIONS</h4>
+      <script type="text/x-template" id="slider-2d-template">
+        <div class="slider-2d" @mousedown="initDrag" @touchstart="initDrag">
+          <div class="handle" :style="{left: left + 'px', top: top + 'px'}">
+              <div class="axis-x-line"></div>
+              <div class="axis-y-line"></div>
+          </div>
+        </div>
+      </script>
+      <slider-2d v-if="isSlider2dActive" :axes="selectedAxes" v-model="selectedAxes" @input="handleActiveFontChange"></slider-2d>
+      <div class="sliders">
+        <div class="slider" v-for="axis in activeFont.variableOptions.axes" :class="{selected: axis.isSelected}">
+          <span v-if="isSlider2dActive" class="radio-button" @click="activateAxis(axis)"></span>
+          <label for="range-input" class="label-text">{{axis.name}}</label>
+          <input type="text" class="value-text" v-model="axis.defaultValue" @input="handleActiveFontChange" @keydown="captureKeydown">
+          <input type="range" :min="axis.minValue"  :max="axis.maxValue" step="0.01" v-model="axis.defaultValue" @input="handleActiveFontChange">
+        </div>
+      </div>
+    </div>
+    <div class="section section-code">
+      <h4 class="subtitle-text">CSS</h4>
+      <code id="code" class="select-enabled">
+        <span>{{cssFontFaces}}</span>
+        <span class="css-for-canvas-object"
+          :class="{highlight: canvasObject.isSelected}" 
+          v-for="canvasObject in canvasObjects"
+          @click="handleCSSCanvasObjectClick(canvasObject)"
+          @mouseover="highLightCanvasObject(canvasObject)"
+          @mouseleave="unHighLightCanvasObject(canvasObject)"
+          >{{generateCSSForCanvasObject(canvasObject)}}</span>
+      </code>
+    </div>
+    <div class="section section-export">
+      <form id="form-export" action="https://codepen.io/pen/define" method="POST" target="_blank">
+        <input type="hidden" name="data" :value='codepenJSON'>
+        <button class="button button-export" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><title>export</title><path d="M15.5,11h-1a.5.5,0,0,0-.5.5V14H4V11.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4a.5.5,0,0,0,.5.5h13a.5.5,0,0,0,.5-.5v-4A.5.5,0,0,0,15.5,11Z"/><path d="M7,11.5a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5V7h3L9,2,4,7H7Z"/></svg>
+        </button>
+      </form>
+      <div class="button label-text button-copy-selected" v-if="selectedCanvasObjects.length > 0">Copy Selected</div>
+      <div class="button label-text button-copy-all">Copy All</div>
+    </div>
+  </div>
+  <div class="about select-enabled">
+    <h1>About Font Playground</h1>
+    <p>Font Playground is built for three groups of audiences.</p>
+    <p>The first group of audience is typographers and designers, who would like to play with fonts that are built with the latest font technologies, such as variable font. It is a playground to fully explore what these new font technologies can offer and how they can be beneficial to your creative workflow.</p>
+    <p>The second group of audience is me, as a Type Tool’s UI/UX designer. This is a playground for me to test UI experiments for variable fonts and other new upcoming font technologies. One of the key points to the success of new font technology is adoption by design tools, and furthermore, designers. How can design tool present variable fonts in a way that is useful but not too complicated to handle? I hope to find the answers with this playground.</p>
+    <p>The third group of audience is the type designers and foundries. This is a place to showcase the work-in-progress, cutting-edge font creations. It is a playground to see how fonts are being presented and used in future design tools. How fonts are used can also inform how fonts are made, and what standard should be defined.</p>
+    <h1>Credits</h1>
+    <p>Font Playground is an ongoing personal project of <a href="https://twitter.com/DesignJokes" target="_blank">Wenting Zhang</a> and Hua Shu, inspired by Nick Sherman’s <a href="https://v-fonts.com/" target="_blank">v-fonts.com</a>, Laurence Penney’s <a href="https://www.axis-praxis.org/" target="_blank">axis-praxis.org</a>, and Andrew Johnson's <a href="http://alistapart.com/article/user-interfaces-for-variable-fonts" target="_blank">article about User Interfaces for Variable Fonts</a>.</p>
+    <p>Many thanks to the tool makers of <a href="https://wakamaifondue.com/" target="_blank">wakamaifondue.com</a>, <a href="https://github.com/Monotype/variableFont.js" target="_blank">variableFont.js</a>, and <a href="https://vuejs.org/" target="_blank">vue.js</a>. Font Playground would not be developed as easily (or at all) without the generosity of them who shared their genius work with the world.</p>
+    <p>I would like to thanks type designers who are generous to grant me licenses to their commercial fonts, <a href="https://djr.com/" target="_blank">David Jonathan Ross</a>, <a href="http://cjtype.com/" target="_blank">CJ Dunn</a>,  <a href="http://www.ohnotype.co/" target="_blank">James T. Edmondson</a>, and type designers and foundries who are generous to grant free usage or even open source their fonts. Only with such generosity, our community can have so many variable fonts to play with and to learn from. </p>
+    <h1>Contact</h1>
+    <ul>
+      <li>Github: <a href="https://github.com/wentin/font-playground" target="_blank">https://github.com/wentin/font-playground</li></a>
+      <li>Newsletter: <a href="http://eepurl.com/dCxipf" target="_blank">subscribe to it</li></a>
+    </ul>
+    <p>
+    If you have any feedback or suggestions, chat with me on twitter or email me.
+    If you find issues on Font Playground, please file an issue report on <a href="https://github.com/wentin/font-playground/issues" target="_blank">Github</a>, or contact me via Email.</p>
+    <p>
+    Font playground is actively looking to add more variable fonts to its font menu. If you could share your fonts with Font Playground, I thank your generosity in advance, and please get in touch with me via Email.
+    </p>
+  </div>
+</div>
+<!-- <script src="http://localhost:35729/livereload.js"></script> -->
+<script src="js/clipboard.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+</html>
+
+</document_content>
+</document>
+
+# File: /Users/adam/Developer/vcs/github.twardoch/pub/font-playground/js/app.js
+# Language: javascript
+
+
+
+# File: /Users/adam/Developer/vcs/github.twardoch/pub/font-playground/js/clipboard.min.js
+# Language: javascript
+
+function e((o))
+
+function n((t,e))
+
+function t((t,e))
+
+function t((e))
+
+function o((t,e,n))
+
+function r((t,e,n))
+
+function i((t,e,n))
+
+function a((t,e,n))
+
+function n(())
+
+function o(())
+
+function r((t))
+
+function i((t,e))
+
+function a((t,e))
+
+function c((t,e))
+
+function u((t,e))
+
+function t((t,e))
+
+function e((t,n))
+
+function n((t,e))
+
+function o((t,e,n,o,r))
+
+function r((t,e,n,r,i))
+
+function i((t,e,n,o))
+
+function n((t))
+
+
+<document index="8">
+<source>js/data.json</source>
+<document_content>
+ [
+      {
+        "fontFamilyName": "Adobe VF Prototype",
+        "isActive": true,
+        "fontFileName": "AdobeVFPrototype.woff2",
+... (file content truncated to first 5 lines)
+</document_content>
+</document>
+
+<document index="9">
+<source>license.txt</source>
+<document_content>
+## creative commons
+
+# Attribution 4.0 International
+
+Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.
+
+### Using Creative Commons Public Licenses
+
+Creative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public license below. The following considerations are for informational purposes only, are not exhaustive, and do not form part of our licenses.
+
+* __Considerations for licensors:__ Our public licenses are intended for use by those authorized to give the public permission to use material in ways otherwise restricted by copyright and certain other rights. Our licenses are irrevocable. Licensors should read and understand the terms and conditions of the license they choose before applying it. Licensors should also secure all rights necessary before applying our licenses so that the public can reuse the material as expected. Licensors should clearly mark any material not subject to the license. This includes other CC-licensed material, or material used under an exception or limitation to copyright. [More considerations for licensors](http://wiki.creativecommons.org/Considerations_for_licensors_and_licensees#Considerations_for_licensors).
+
+* __Considerations for the public:__ By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensor’s permission is not necessary for any reason–for example, because of any applicable exception or limitation to copyright–then that use is not regulated by the license. Our licenses grant only permissions under copyright and certain other rights that a licensor has authority to grant. Use of the licensed material may still be restricted for other reasons, including because others have copyright or other rights in the material. A licensor may make special requests, such as asking that all changes be marked or described. Although not required by our licenses, you are encouraged to respect those requests where reasonable. [More considerations for the public](http://wiki.creativecommons.org/Considerations_for_licensors_and_licensees#Considerations_for_licensees).
+
+## Creative Commons Attribution 4.0 International Public License
+
+By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution 4.0 International Public License ("Public License"). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.
+
+### Section 1 – Definitions.
+
+a. __Adapted Material__ means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.
+
+b. __Adapter's License__ means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.
+
+c. __Copyright and Similar Rights__ means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.
+
+d. __Effective Technological Measures__ means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.
+
+e. __Exceptions and Limitations__ means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.
+
+f. __Licensed Material__ means the artistic or literary work, database, or other material to which the Licensor applied this Public License.
+
+g. __Licensed Rights__ means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.
+
+h. __Licensor__ means the individual(s) or entity(ies) granting rights under this Public License.
+
+i. __Share__ means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.
+
+j. __Sui Generis Database Rights__ means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.
+
+k. __You__ means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.
+
+### Section 2 – Scope.
+
+a. ___License grant.___
+
+   1. Subject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:
+
+       A. reproduce and Share the Licensed Material, in whole or in part; and
+
+       B. produce, reproduce, and Share Adapted Material.
+
+   2. __Exceptions and Limitations.__ For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.
+
+   3. __Term.__ The term of this Public License is specified in Section 6(a).
+
+   4. __Media and formats; technical modifications allowed.__ The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.
+
+   5. __Downstream recipients.__
+
+       A. __Offer from the Licensor – Licensed Material.__ Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.
+
+       B. __No downstream restrictions.__ You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.
+
+   6. __No endorsement.__ Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).
+
+b. ___Other rights.___
+
+   1. Moral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.
+
+   2. Patent and trademark rights are not licensed under this Public License.
+
+   3. To the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.
+
+### Section 3 – License Conditions.
+
+Your exercise of the Licensed Rights is expressly made subject to the following conditions.
+
+a. ___Attribution.___
+
+   1. If You Share the Licensed Material (including in modified form), You must:
+
+       A. retain the following if it is supplied by the Licensor with the Licensed Material:
+
+         i. identification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);
+
+         ii. a copyright notice;
+
+         iii. a notice that refers to this Public License;
+
+         iv. a notice that refers to the disclaimer of warranties;
+
+         v. a URI or hyperlink to the Licensed Material to the extent reasonably practicable;
+
+       B. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and
+
+       C. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.
+
+   2. You may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.
+
+   3. If requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.
+
+   4. If You Share Adapted Material You produce, the Adapter's License You apply must not prevent recipients of the Adapted Material from complying with this Public License.
+
+### Section 4 – Sui Generis Database Rights.
+
+Where the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:
+
+a. for the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;
+
+b. if You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material; and
+
+c. You must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.
+
+For the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.
+
+### Section 5 – Disclaimer of Warranties and Limitation of Liability.
+
+a. __Unless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.__
+
+b. __To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.__
+
+c. The disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.
+
+### Section 6 – Term and Termination.
+
+a. This Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.
+
+b. Where Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:
+
+   1. automatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or
+
+   2. upon express reinstatement by the Licensor.
+
+   For the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.
+
+c. For the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.
+
+d. Sections 1, 5, 6, 7, and 8 survive termination of this Public License.
+
+### Section 7 – Other Terms and Conditions.
+
+a. The Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.
+
+b. Any arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.
+
+### Section 8 – Interpretation.
+
+a. For the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.
+
+b. To the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.
+
+c. No term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.
+
+d. Nothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.
+
+> Creative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at [creativecommons.org/policies](http://creativecommons.org/policies), Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.
+>
+> Creative Commons may be contacted at creativecommons.org
+
+</document_content>
+</document>
+
+<document index="10">
+<source>package-lock.json</source>
+<document_content>
+{
+  "name": "name",
+  "version": "1.0.0",
+  "lockfileVersion": 1,
+  "requires": true,
+... (file content truncated to first 5 lines)
+</document_content>
+</document>
+
+<document index="11">
+<source>package.json</source>
+<document_content>
+{
+  "name": "name",
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+... (file content truncated to first 5 lines)
+</document_content>
+</document>
+
+<document index="12">
+<source>scss/fonts.scss</source>
+<document_content>
+$assetPath : "https://fonts.typedetail.com/";
+// $assetPath : "../fonts/";
+
+@font-face {
+  src: url('#{$assetPath}AdobeVFPrototype.woff2');
+  font-family:'Adobe Prototype';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}AmstelvarAlpha-VF.woff2');
+  font-family:'Amstelvar';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}AngusVariableItalic.woff2');
+  font-family:'Angus Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}AngusVariable.woff2');
+  font-family:'Angus';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}AvenirNext_Variable.woff2');
+  font-family:'Avenir Next';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Bahnschrift.woff2');
+  font-family:'Bahnschrift';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}BarlowGX.woff2');
+  font-family:'Barlow';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}BluuSuuperstarVariableItalic.woff2');
+  font-family:'Bluu Suuperstar Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}BluuSuuperstarVariable.woff2');
+  font-family:'Bluu Suuperstar';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}BuffaloGals_Var.woff2');
+  font-family:'Buffalo Gals';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Cheee_Variable.woff2');
+  font-family:'Cheee';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}CompressaPRO-GX.woff2');
+  font-family:'Compressa';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}DecovarAlpha-VF.woff2');
+  font-family:'Decovar';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}DriveItalicVariable.woff2');
+  font-family:'Drive Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}DriveMonoVariableItalic.woff2');
+  font-family:'Drive Mono Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}DriveMonoVariable.woff2');
+  font-family:'Drive Mono';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}DrivePropItalicVariable.woff2');
+  font-family:'Drive Prop Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}DrivePropVariable.woff2');
+  font-family:'Drive Prop';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}DriveVariable.woff2');
+  font-family:'Drive';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Dunbar_Series-VF.woff2');
+  font-family:'Dunbar';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}ExtraordinaireVariable-VF.woff2');
+  font-family:'Extraordinaire';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}ExtraordinaireVariableShade-VF.woff2');
+  font-family:'Extraordinaire Shade';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Fit-Variable.woff2');
+  font-family:'Fit';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Gimlet_Romans-VF.woff2');
+  font-family:'Gimlet Beta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Gimlet_Italics-VF.woff2');
+  font-family:'Gimlet Italic Beta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Gingham.woff2');
+  font-family:'Gingham';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Gnomon-Web.woff2');
+  font-family:'Gnomon';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Input_Mono-VF.woff2');
+  font-family:'Input Mono Beta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Jabin-VF.woff2');
+  font-family:'Jabin';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}KairosSans_Variable.woff2');
+  font-family:'Kairos Sans';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}LabDJR-VF.woff2');
+  font-family:'Lab';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}LeagueMonoVariable.woff2');
+  font-family:'League Mono';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}LibreFranklinGX-Romans.woff2');
+  font-family:'Libre Franklin';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}LibreFranklinGX-Italics.woff2');
+  font-family:'Libre Franklin Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}LouvetteBETA-VF.woff2');
+  font-family:'Louvette Beta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}LouvetteBETA_Italic-VF.woff2');
+  font-family:'Louvette Italic Beta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}MarkaziText-VF.woff2');
+  font-family:'Markazi Text';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}MeritBadge-VF.woff2');
+  font-family:'Merit Badge';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}MetaVariableDemo-Set.woff2');
+  font-family:'Meta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}NunitoVFBeta.woff2');
+  font-family:'Nunito Beta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Output_Sans-VF.woff2');
+  font-family:'Output Sans Beta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Output_Sans_Hairlines-VF.woff2');
+  font-family:'Output Sans Hairlines';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Pappardelle-VF.woff2');
+  font-family:'Pappardelle';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}renner-VF.woff2');
+  font-family:'Renner';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}RhodyVariable-VF.woff2');
+  font-family:'Rhody';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}RoslindaleVariableBeta-VF.woff2');
+  font-family:'Roslindale Beta';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SFNSDisplay.woff2');
+  font-family:'San Francisco Display';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SFNSText.woff2');
+  font-family:'San Francisco Text';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SFNSTextItalic.woff2');
+  font-family:'San Francisco Text Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Selawik-variable.woff2');
+  font-family:'Selawik';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}Slovic_Demo_VarGX.woff2');
+  font-family:'Slovic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SourceCodeVariable-Italic.woff2');
+  font-family:'Source Code Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SourceCodeVariable-Roman.woff2');
+  font-family:'Source Code';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SourceSansVariable-Italic.woff2');
+  font-family:'Source Sans Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SourceSansVariable-Roman.woff2');
+  font-family:'Source Sans';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SourceSerifVariable-Roman.woff2');
+  font-family:'Source Serif';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}SpookyVariable.woff2');
+  font-family:'Spooky';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}VennVF.woff2');
+  font-family:'Venn';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}VesterbroVariable.woff2');
+  font-family:'Vesterbro';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}VesterbroItalicVariable.woff2');
+  font-family:'Vesterbro Italic';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}VotoSerifGX.woff2');
+  font-family:'Voto Serif';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}ZinzinVF.woff2');
+  font-family:'Zinzin';
+  font-style: normal;
+}
+@font-face {
+  src: url('#{$assetPath}dTJakobVariableConceptGX.woff2');
+  font-family:'dT Jakob';
+  font-style: normal;
+}
+
+</document_content>
+</document>
+
+<document index="13">
+<source>scss/style.scss</source>
+<document_content>
+// $A100: #3D9CFF;
+// $G100: #000000;
+// $G200: #141414;
+// $G300: #333333;
+// $G400: #6A6A6A;
+// $G500: #A3A3A3;
+// $G600: #BBBBBB;
+// $G700: #FFFFFF;
+// $vfColor: #3D9CFF;
+
+$A100: #2680EB;
+$G100: #FFFFFF;
+$G200: #F7F7F7;
+$G300: #E1E1E1;
+$G400: #999999;
+$G500: #666666;
+$G600: #333333;
+$G700: #000000;
+$vfColor: #2680EB;
+
+// $A100: #50C9CE;
+// $G100: #FFFFFF;
+// $G200: #FDFCF6;
+// $G300: #E8E3DC;
+// $G400: #9D978F;
+// $G500: #6A6256;
+// $G600: #332C21;
+// $G700: #000000;
+// $vfColor: #50C9CE;
+
+$textBackgroundColor: #FFFFFF;
+$textColor: #000000;
+$transition: 125ms ease-in-out;
+
+$sans: 'Nunito Beta', sans-serif;
+$mono: 'Input Mono Beta', monospace;
+@import 'fonts';
+
+@mixin track() {
+    background-color: $G300;
+    border-radius: 1px;
+    border: none;
+    outline: none;
+    height: 2px;
+    padding: 0;
+}
+@mixin thumb() {
+    -webkit-appearance: none;
+    outline: none;
+    background: $G100;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 2px solid $G500;
+    box-shadow: 3px 0 0 1px $G200,
+                -3px 0 0 1px $G200;
+    box-sizing: border-box;
+    margin-top: -7px;
+    transition: border $transition;
+    z-index: 1;
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color: transparent;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      &::-webkit-slider-thumb {
+        border-width: 8px;
+      }
+
+      &::-moz-range-thumb {
+        border-width: 8px;
+      }
+
+      &::-ms-thumb {
+        border-width: 8px;
+      }
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include track();
+    }
+    
+    &::-moz-range-track {
+      @include track();
+    }
+
+    &::-ms-track {
+      @include track();
+      border-color: transparent;
+      color: transparent;
+    }
+
+    &::-webkit-slider-thumb {
+      @include thumb();
+    }
+
+    &::-moz-range-thumb {
+      @include thumb();
+    }
+
+    &::-ms-thumb {
+      @include thumb();
+      margin-top: 0;
+    }
+
+    &::-ms-tooltip,
+    &::-ms-ticks-before,
+    &::-ms-ticks-after {
+      display: none;
+    }
+
+    &::-ms-fill-lower {
+      background: $G500;
+      border-radius: 1px;
+    }
+
+    &::-ms-fill-upper {
+      background: $G300;
+      border-radius: 1px;
+    }
+
+    &::-moz-focus-outer {
+      border: 0;
+    }
+}
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  border-bottom: solid 1px $G300;
+  background-color: transparent;
+
+  &::placeholder {
+    color: $G400;
+  }
+}
+// .select-disabled {
+//   -moz-user-select: none;
+//   -khtml-user-select: none;
+//   -webkit-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+
+// .select-enabled {
+//   -moz-user-select: text;
+//   -khtml-user-select: text;
+//   -webkit-user-select: text;
+//   -ms-user-select: text;
+//   user-select: text;
+// }
+
+// [contenteditable]:focus {
+//   outline: none;
+// }
+
+.text-frame {
+  display: inline-block;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  border: solid 1px transparent;
+  
+
+  &.point-type, &.fit-type {
+    &:hover,
+    &.selected {
+      border: solid 1px $vfColor;
+    }
+  }
+  
+  &.area-type {
+    &:hover,
+    &.selected {
+      border: solid 1px $vfColor;
+    }
+  }
+
+  &.highlight {
+    .text {
+      color: $vfColor;
+    }
+  }
+  
+  &.point-type .text {
+    white-space: nowrap;
+  }
+  &.area-type .text {
+    height: 100%;
+    white-space: normal;
+    overflow: hidden;
+  }
+  .text {
+    font-size: 100px;
+    font-family:'Dunbar';
+    font-variation-settings: "wght" 400, "opsz" 72;
+
+    .controls--vf-xheight {
+      .vf-xheight-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        cursor: ns-resize;
+        background-color: $vfColor;
+        visibility: hidden;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -5px;
+          margin: auto;
+          height: 11px;
+          background-color: rgba($vfColor, 0.15);
+        }
+      }
+      .vf-base-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-bottom: 1px dashed $vfColor;
+        visibility: hidden;
+      }
+    }
+  }
+
+  .round-handle {
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    border: solid 1px $vfColor;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  .square-handle {
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    border: solid 1px $vfColor;
+    background-color: #fff;
+  }
+  .controls--vf-opsz {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -60px;
+    width: 9px;
+  
+    .vf-opsz-handle {
+      position: relative;
+      width: 7px;
+      height: 7px;
+      border: solid 1px $vfColor;
+      border-radius: 50%;
+      cursor: ns-resize;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1px;
+        height: 7px;
+        background-color: $vfColor;
+        box-shadow: -2px 0 0 0 $vfColor, 2px 0 0 0 $vfColor;
+      }
+    }
+
+    .vf-opsz-line {
+      position: absolute;
+      width: 0;
+      left: 4px;
+      height: 50px;
+      top: -50px;
+      transform-origin: left bottom;
+      border-left: solid 1px $vfColor;
+    }
+  } 
+  .controls--vf-slantness {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -60px;
+    width: 9px;
+
+    .vf-slantness-handle {
+      position: relative;
+      width: 7px;
+      height: 7px;
+      border: solid 1px $vfColor;
+      border-radius: 4.5px;
+      cursor: ew-resize;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1px;
+        height: 7px;
+        background-color: $vfColor;
+        box-shadow: -2px 0 0 0 $vfColor, 2px 0 0 0 $vfColor;
+      }
+    }
+
+    .vf-slantness-line {
+      position: absolute;
+      width: 0;
+      left: 4px;
+      height: 50px;
+      transform-origin: left bottom;
+      border-left: solid 1px $vfColor;
+    }
+  } 
+  .controls--vf-width-x {
+    position: absolute;
+    right: -60px;
+    bottom: -5px;
+    margin: auto;
+    width: 9px;
+    height: 9px;
+
+    .vf-width-x-handle {
+      position: relative;
+      width: 7px;
+      height: 7px;
+      border: solid 1px $vfColor;
+      border-radius: 50%;
+      cursor: ew-resize;
+      background-color: #fff;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1px;
+        height: 7px;
+        background-color: $vfColor;
+        box-shadow: -2px 0 0 0 $vfColor, 2px 0 0 0 $vfColor;
+      }
+    }
+
+    .vf-width-x-line {
+      position: absolute;
+      width: 0;
+      left: -50px;
+      top: 4px;
+      width: 50px;
+      border-top: solid 1px $vfColor;
+    }
+  }
+  .controls--vf-width-y {
+    position: absolute;
+    right: -5px;
+    margin: auto;
+    bottom: -60px;
+    width: 9px;
+  
+    .vf-width-y-handle {
+      position: relative;
+      width: 7px;
+      height: 7px;
+      border: solid 1px $vfColor;
+      border-radius: 50%;
+      cursor: ns-resize;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1px;
+        height: 7px;
+        background-color: $vfColor;
+        box-shadow: -2px 0 0 0 $vfColor, 2px 0 0 0 $vfColor;
+      }
+    }
+
+    .vf-width-y-line {
+      position: absolute;
+      width: 0;
+      left: 4px;
+      height: 50px;
+      top: -50px;
+      transform-origin: left bottom;
+      border-left: solid 1px $vfColor;
+    }
+  }
+  .controls--vf-width {
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 9px;
+
+    .vf-width-handle {
+      position: relative;
+      width: 7px;
+      height: 7px;
+      border: solid 1px $vfColor;
+      border-radius: 50%;
+      cursor: nwse-resize;
+      background-color: #fff;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1px;
+        height: 7px;
+        background-color: $vfColor;
+        box-shadow: -2px 0 0 0 $vfColor, 2px 0 0 0 $vfColor;
+      }
+    }
+
+    .vf-width-line {
+      position: absolute;
+      width: 0;
+      left: 3px;
+      top: 3px;
+      height: 76px;
+      transform-origin: top center;
+      transform: rotate(135deg);
+      border-left: solid 1px $vfColor;
+    }
+  }
+  .controls--size {
+    .handle {
+      width: 7px;
+      height: 7px;
+      position: absolute;
+      border: solid 1px $vfColor;
+      background-color: #fff;
+      border-radius: 50%;
+      &.top.left {
+        cursor: nw-resize;
+      }
+      &.top.center {
+        cursor: n-resize;
+      }
+      &.top.right {
+        cursor: ne-resize;
+      }
+      &.middle.left {
+        cursor: w-resize;
+      }
+      &.middle.right {
+        cursor: e-resize;
+      }
+      &.bottom.left {
+        cursor: sw-resize;
+      }
+      &.bottom.center {
+        cursor: ns-resize;
+      }
+      &.bottom.right {
+        cursor: se-resize;
+      }
+      &.top {
+        top: -5px;
+      }
+      &.bottom {
+        bottom: -5px;
+      }
+      &.left {
+        left: -5px;
+      }
+      &.right {
+        right: -5px;
+      }
+      &.center {
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      &.middle {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+  .controls--area-size {
+    .square-handle {
+      &.top.left,
+      &.bottom.right {
+        cursor: nwse-resize;
+      }
+      &.top.right,
+      &.bottom.left {
+        cursor: nesw-resize;
+      }
+      &.top {
+        top: -5px;
+      }
+      &.bottom {
+        bottom: -5px;
+      }
+      &.left {
+        left: -5px;
+      }
+      &.right {
+        right: -5px;
+      }
+    }
+  }
+  .controls--font-size {
+    .round-handle.font-size-handle {
+      cursor: ns-resize;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+  .controls--contrast {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -62px;
+    width: 52px;
+    display: none;
+    
+    .contrast-value {
+      display: inline-block;
+      font-size: 20px;
+      height: 20px;
+      color: $vfColor;
+      width: 40px;
+      text-align: right;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 12px;
+      position: absolute;
+    }
+    .contrast-bracket {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 8px;
+      border-top: solid 1px $vfColor;
+      border-left: solid 1px $vfColor;
+      border-bottom: solid 1px $vfColor;
+    }
+  }
+  &:hover .controls--vf-xheight {
+    .vf-xheight-line,
+    .vf-base-line {
+      visibility: visible;
+    }
+  }
+  
+  [class^="controls-"] {
+    display: none;
+  }
+  
+  &.selected.area-type .controls--area-size,
+  &.selected.area-type .controls--font-size,
+  &.selected.point-type .controls--font-size,
+  &.selected.vf-optical-size-on .controls--vf-opsz,
+  &.selected.point-type.vf-width-on .controls--vf-width,
+  &.selected.point-type.vf-width-on .controls--vf-width-x,
+  &.selected.point-type.vf-width-on .controls--vf-width-y,
+  &.selected.vf-slant-on .controls--vf-slantness,
+  &.selected.vf-xheight-on .controls--vf-xheight {
+    display: block;
+  }
+}
+
+body {
+  background-color: $textBackgroundColor;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  font-family: $sans;
+  display: flex;
+}
+
+#font-playground-app {
+  width: 100%;
+
+  &.design-view {
+    .panel .section.section-font-size,
+    .panel .section.section-preset-variations {
+      display: block;
+    }
+    .panel .section.section-variable-options {
+      display: flex;
+    }
+    .panel .section.section-code,
+    .panel .section.section-export {
+      display: none;
+    }
+    .about {
+      display: none;
+    }
+  }
+  &.code-view {
+    .panel .section.section-font-size,
+    .panel .section.section-preset-variations,
+    .panel .section.section-variable-options {
+      display: none;
+    }
+    .panel .section.section-code,
+    .panel .section.section-export {
+      display: flex;
+    }
+    .about {
+      display: none;
+    }
+  }
+
+  .drawer {
+    display: none;
+  }
+  .canvas {
+    width: calc(100vw - 284px);
+    left: 42px;
+  }
+  &.font-menu-opened {
+    .drawer {
+      display: block;
+    }
+    .canvas {
+      width: calc(100vw - 526px);
+      left: 284px;
+    }
+  }
+
+  &.about-view {
+    .tools, .drawer, .panel, .canvas {
+      display: none;
+    }
+    .about {
+      display: block;
+    }
+  }
+}
+
+.subtitle-text {
+  font-family: $sans;
+  font-variation-settings: 'wght' 140; 
+  color: $G400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+}
+.logo-text {
+  font-family: $sans;
+  font-variation-settings: 'wght' 156; 
+  color: $G500;
+  font-size: 14px;
+  text-decoration: none;
+  
+  .accent-text {
+    color: $A100;
+  }
+}
+.badge-text {
+  font-family: $sans;
+  font-variation-settings: 'wght' 99; 
+  color: $G500;
+  font-size: 12px;
+}
+.label-text {
+  font-family: $sans;
+  font-variation-settings: 'wght' 99;
+  color: $G600;
+  font-size: 12px;
+}
+.value-text {
+  font-family: $sans;
+  font-variation-settings: 'wght' 99;
+  color: $G700;
+  font-size: 12px;
+}
+.button {
+  background-color: $G100;
+  border: 1px solid $G300;
+  line-height: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 0 5px;
+  cursor: pointer;
+  display: inline-block;
+
+  &:active {
+    border-color: $A100;
+  }
+}
+
+.tabs {
+  width: 100vw;
+  height: 37px;
+  background-color: $G200;
+  border-bottom: 2px solid $G300;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  .logo-text {
+    margin-left: 12px;
+    line-height: 37px;
+    position: absolute;
+    left: 0;
+  }
+  .menu {
+    position: absolute;
+    left: 140px;
+    display: flex;
+    
+    & > li {
+      position: relative;
+
+      &:hover {
+        & > ul {
+          display: block;
+        }
+        & > span {
+          cursor: pointer;
+          background-color: $G500;
+          color: $G100;
+        }
+      }
+      
+      & > span {
+        display: block;
+        padding: 0 15px;
+        line-height: 38px;
+        height: 37px;
+      }
+
+      & > ul {
+        display: none;
+        border-radius: 0 0 3px 3px;
+        width: max-content;
+        position: absolute;
+        padding-top: 2px;
+        left: 0;
+        box-shadow: 0 3px 10px rgba($G500, 0.5);
+        z-index: 9;
+        li, a {
+          display: block;
+          position: relative;
+          line-height: 30px;
+          padding: 0 30px 0 15px;
+          background-color: $G200;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $A100;
+            color: $G100;
+          }
+
+          &:last-child {
+            border-radius: 0 0 3px 3px;
+          }
+        }
+        li.contains-sub-menu {
+          &:after {
+            content: "▶";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 8px;
+          }
+          ul {
+            display: none;
+            position: absolute;
+            z-index: 2;
+            left: 100%;
+            top: 0;
+            box-shadow: 0 3px 10px rgba($G500, 0.5);
+            li {
+              color: $G700;
+              padding: 0 15px;
+
+              &:hover {
+                color: $G100;
+              }
+
+              &:last-child {
+                border-radius: 0 0 3px 3px;
+              }
+            }
+          }
+          &:hover ul {
+            display: block;
+          }
+        }
+        a.offsite-link {
+          &:after {
+            content: "⸣";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 8px;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+  .tab {
+    position: relative;
+    color: $G500;
+    padding: 0 10px;
+    line-height: 38px;
+    height: 39px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.2s ease;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      border-radius: 1px;
+      background-color: $G700;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    &.active {
+      cursor: default;
+      color: $G700;
+      
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  .social {
+    margin-right: 12px;
+    margin-top: 4px;
+    position: absolute;
+    right: 0;
+    display: flex;
+
+    .icon-button {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      path {
+        fill: $G500;
+        transition: fill 0.2s ease;
+      }
+      &.newsletter:hover {
+        path {
+          fill: $A100;
+        }
+      }
+      &.twitter:hover {
+        path {
+          fill: #1DA1F2;
+        }
+      }
+      &.facebook:hover {
+        path {
+          fill: #3B5998;
+        }
+      }
+      &.github:hover {
+        path {
+          fill: #000000;
+        }
+      }
+    }
+  }
+}
+.tools {
+  width: 42px;
+  height: calc(100vh - 39px);
+  background-color: $G200;
+  border-right: 2px solid $G300;
+  position: absolute;
+  top: 39px;
+  left: 0;
+  box-sizing: border-box;
+  padding-top: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+  .tool {
+    padding: 9px;
+    cursor: pointer;
+    position: relative;
+    path {
+      fill: $G500;
+      transition: fill 0.2s ease;
+    }
+    &:hover path,
+    &.active path{
+      fill: $A100;
+    }
+  }
+  .tool.font-menu {
+    position: absolute;
+    bottom: 4px;
+  }
+}
+.drawer {
+  width: 242px;
+  height: calc(100vh - 39px);
+  background-color: $G200;
+  border-right: 2px solid $G300;
+  position: absolute;
+  top: 39px;
+  left: 42px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  
+  .section.section-font-cards {
+    height: calc(100% - 210px);
+    display: flex;
+    flex-direction: column;
+
+    .search-box {
+      position: relative;
+      margin-top: 15px;
+      input {
+        width: 100%;
+        height: 26px;
+        line-height: 26px;
+      }
+      input:invalid {
+        box-shadow: none;
+      }
+      input:not(:valid) ~ .close-button {
+        display: none;
+      }
+      input:not(:valid) ~ .search-icon {
+        display: block;
+      }
+      .search-icon {
+        display: none;
+        width: 18px; 
+        height: 18px;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        &:before {
+          content: '';
+          position: absolute;
+          width: 9px;
+          height: 9px;
+          box-sizing: border-box;
+          border: solid 2px $G400;
+          border-radius: 50%;
+          top: 3px;
+          left: 3px;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: 9px;
+          width: 2px;
+          height: 5px;
+          background-color: $G400;
+          border-radius: 1px;
+          transform: rotate(-45deg);
+          transform-origin: 1px top;
+        }
+      }
+      .close-button {
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        &:before,
+        &:after {
+          content: "";
+          display: block;
+          width: 2px;
+          height: 14px;
+          background-color: $G400;
+          border-radius: 1px;
+          position: absolute;
+          top: 2px;
+          left: 8px;
+          transform: rotate(45deg);
+        }
+        &:before {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    .font-cards {
+      margin-top: 15px;
+      overflow: auto;
+      margin-right: -12px;
+      padding-right: 12px;
+    }
+  }
+  .section.section-font-info {
+    position: relative;
+    height: 210px;
+    overflow: auto;
+
+    .font-card {
+      margin-top: 15px;
+    }
+
+    table.font-info__table {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      width: 100%;
+      tr th, tr td {
+        text-align: left;
+        padding-bottom: 12px;
+      }
+      tr:last-child {
+        th, td {
+          padding-bottom: 0;
+        }
+      }
+      tr th {
+        padding-right: 15px;
+        box-sizing: border-box;
+        width: 32%;
+      }
+      tr td {
+        width: 68%;
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+.canvas {
+  background-color: $textBackgroundColor;
+  color: $textColor;
+  height: calc(100vh - 39px);
+  position: absolute;
+  top: 39px;
+  overflow: auto;
+}
+.panel {
+  width: 242px;
+  height: calc(100vh - 39px);
+  background-color: $G200;
+  border-left: 2px solid $G300;
+  position: absolute;
+  top: 39px;
+  right: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  
+  .section.section-font-size {
+    padding: 20px 12px;
+  }
+  .section.section-preset-variations {
+    .variations {
+      margin-top: 15px;
+      max-height: 90px;
+      overflow-y: auto;
+      margin-right: -12px;
+      padding-right: 12px;
+    }
+  }
+  .section.section-variable-options {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    .slider-2d {
+      flex-shrink: 0;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    .sliders {
+      margin-right: -12px;
+      padding-right: 12px;
+      overflow: auto;
+      margin-top: 15px;
+    } 
+    .slider {
+      margin-bottom: 20px;
+    }
+  }
+  .section.section-code {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex-grow: 1;
+    code {
+      background-color: $G100;
+      color: $G700;
+      border-radius: 3px;
+      border: solid 1px $G300;
+      display: block;
+      font-family: $mono;
+      font-variation-settings: 'wght' 450, 'wdth' 500, 'slnt' 0;
+      font-size: 11px;
+      line-height: 1.3;
+      margin-top: 15px;
+      padding: 10px 6px;
+      white-space: pre;
+      overflow: auto;
+      word-wrap: break-word;
+
+      span.css-for-canvas-object {
+        display: block;
+        cursor: pointer;
+        width: max-content;
+        min-width: calc(100% + 6px);
+        
+        &.highlight {
+          background-color: $G700;
+          color: $G100;
+        }
+        &:hover {
+          color: $vfColor;
+        }
+      }
+    }
+  }
+  .section.section-export {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 100%;
+    background-color: $G200;
+    .button {
+      margin-left: 12px;
+
+      &.copied {
+        position: relative;
+        border-color: $A100;
+        
+        &:after {
+          content: "Copied";
+          position: absolute;
+          color: $G100;
+          background-color: $A100;
+          left: 0;
+          width: 100%;
+          height: 26px;
+          text-align: center;
+          border-radius: 2px;
+        }
+      }
+      &.button-export {
+        margin-left: 0;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        path {
+          fill: $G500;
+        }
+      }
+    }
+    #form-export {
+      display: flex;
+      flex-grow: 1;
+    }
+    button:focus {
+      outline: none;
+    }
+  }
+}
+.about {
+  background-color: $textBackgroundColor;
+  width: 600px;
+  margin: 80px auto;
+  font-family: $sans;
+  font-variation-settings: 'wght' 99; 
+  color: $textColor;
+  font-size: 16px;
+  line-height: 24px;
+  h1 {
+    margin: 22px 0 0 0;
+    font-variation-settings: 'wght' 156; 
+  }
+  p {
+    font-variation-settings: 'wght' 99; 
+    margin: 11px 0;
+  }
+  ul {
+    margin: 11px 0;
+    li {
+      font-variation-settings: 'wght' 99; 
+    }
+  }
+  a {
+    color: $textColor;
+  }
+}
+
+.section {
+  border-top: 2px solid $G300;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  
+  &:first-child,
+  &.section-code {
+    border-top: none;
+  }
+}
+.font-card {
+  background-color: $G100;
+  border: 1px solid $G300;
+  padding: 5px 9px;
+  cursor: pointer;
+  transition: border-color $transition;
+  border-radius: 3px;
+  margin-bottom: 6px;
+  position: relative;
+  &.active {
+    border-color: $A100;
+  }
+  .font-preview {
+    font-size: 20px;
+    line-height: 26px;
+    height: 26px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: $sans;
+    font-variation-settings: 'dfat' 0;
+    color: $G600;
+    margin-right: -9px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 20px;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
+    }
+  }
+  .label-text {
+    line-height: 15px;
+    height: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 30px;
+    margin-bottom: 2px;
+    color: $G700;
+  }
+  .badge-text {
+    line-height: 15px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    
+    &:before {
+      content: '';
+      position: relative;
+      display: inline-block;
+      top: 1px;
+      width: 11px;
+      height: 11px;
+      margin-right: 3px;
+      background-image: url(../images/variable-font.svg);
+    }
+  }
+}
+.variation-card {
+  background-color: $G100;
+  color: $G700;
+  border: 1px solid $G300;
+  font-size: 12px;
+  line-height: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-bottom: 6px;
+  padding-left: 5px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  
+  &.active {
+    border-color: $A100;
+  }
+  
+  span.specimen {
+    font-size: 20px;
+    float: right;
+    margin-right: 5px;
+    line-height: 26px;
+    color: $G600;
+  }
+}
+.slider-2d {
+  position: relative;
+  width: 216px;
+  height: 216px;
+  overflow: hidden;
+  cursor: crosshair;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid $G300;
+    background-color: $G100;
+    border-radius: 3px;
+  }
+
+  &:active .handle:before {
+    border-width: 8px;
+  }
+  
+  .handle {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 16px;
+    height: 16px;
+    cursor: move;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: 2px solid $G500;
+      background-color: $G100;
+      border-radius: 50%;
+      transition: border $transition;
+    }
+    
+    
+    .axis-x-line {
+      position: absolute;
+      &:before, 
+      &:after {
+        content: "";
+        position: absolute;
+        width: 216px;
+        height: 2px;
+        top: 7px;
+      }
+      &:before {
+        background-color: $G300;
+        left: -220px;
+      }
+      &:after {
+        background-color: $G300;
+        right: -236px;
+      }
+    }
+    
+    .axis-y-line {
+      position: absolute;
+      &:before, 
+      &:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 216px;
+        left: 7px;
+      }
+      &:before {
+        background-color: $G300;
+        top: -220px;
+      }
+      &:after {
+        background-color: $G300;
+        bottom: -236px;
+      }
+    }
+  }
+}
+.slider {
+  span.radio-button {
+    float: left;
+    margin-right: 6px;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    background-color: $G100;
+    border: 1px solid $G400;
+    border-radius: 3px;
+    cursor: pointer;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 100%;
+      border-top: solid 2px $G300;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 6px;
+      width: 2px;
+      height: 14px;
+      background-color: $G300;
+    }
+  } 
+  &.selected {
+    span.radio-button {
+      border: none;
+      background-color: transparent;
+      cursor: default;
+      &:before {
+        content: 'x';
+        width: 100%;
+        top: 2px;
+        left: 0;
+        border-top: solid 2px $G400;
+        color: $G400;
+        font-variation-settings: 'wght' 156; 
+        line-height: 12px;
+        text-align: center;
+      }
+      &:after {
+        content: '';
+        width: 2px;
+        height: 6px;
+        top: 0;
+        left: 14px;
+        background-color: $G400;
+      }
+    }
+  }
+
+  &.selected ~ &.selected{
+    span.radio-button {
+      width: 16px;
+      height: 16px;
+      border: none;
+      background-color: transparent;
+      border-radius: 0;
+      position: relative;
+      cursor: default;
+      &:before {
+        content: 'y';
+        top: 0;
+        left: 2px;
+        height: 100%;
+        border-top: none;
+        border-left: solid 2px $G400;
+        width: 11px;
+        line-height: 10px;
+        text-align: right;
+      }
+      &:after {
+        content: '';
+        width: 6px;
+        height: 2px;
+        top: 14px;
+        left: 0;
+        background-color: $G400;
+      }
+    }
+  }
+
+  label {
+    float: left;
+    line-height: 16px;
+  }
+  input[type=text] {
+    line-height: 16px;
+    float: right;
+    padding: 0 6px 3px 0;
+    width: 50px;
+    text-align: right;
+  }
+  input[type=range] {
+    margin-top: 10px;
+    clear: both;
+  }
+}
+.tip-text {
+  font-family: $sans;
+  font-variation-settings: 'wght' 99;
+  font-size: 10px;
+  white-space: nowrap;
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  z-index: 9;
+  color: $vfColor;
+
+  [class$="-handle"] & {
+    top: 10px;
+    left: 10px;
+  }
+
+  .tool & {
+    top: 13px;
+    left: 30px;
+    color: $textColor;
+    background-color: $textBackgroundColor;
+  }
+
+  .vf-xheight-line &{
+    left: calc(100% + 5px);
+    top: -5px;
+  }
+  
+  .vf-xheight-line:hover &,
+  .tool:hover &,
+  [class$="-handle"]:hover & {
+    display: block;
+  }
+
+  .vf-xheight-line:active &,
+  .tool:active &,
+  [class$="-handle"]:active & {
+    display: none;
+  }
+}
+
+</document_content>
+</document>
+
+</documents>
